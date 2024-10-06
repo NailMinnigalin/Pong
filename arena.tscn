@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://y3ca0hehks7e"]
+
+[ext_resource type="PackedScene" uid="uid://be7j2pw4v8sat" path="res://wall.tscn" id="1_ujid6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i2kyv"]
+
+[node name="Arena" type="Node2D"]
+
+[node name="Wall" parent="." instance=ExtResource("1_ujid6")]
+
+[node name="Wall2" parent="." instance=ExtResource("1_ujid6")]
+position = Vector2(-1, 615)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(555, 320)
+scale = Vector2(57.5, 690)
+texture = SubResource("CanvasTexture_i2kyv")
