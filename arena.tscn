@@ -1,9 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://y3ca0hehks7e"]
+[gd_scene load_steps=7 format=3 uid="uid://y3ca0hehks7e"]
 
 [ext_resource type="PackedScene" uid="uid://be7j2pw4v8sat" path="res://wall.tscn" id="1_ujid6"]
 [ext_resource type="PackedScene" uid="uid://b5unmig8p1knt" path="res://player.tscn" id="2_3ahg8"]
+[ext_resource type="Script" path="res://ball.gd" id="3_mgivc"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_i2kyv"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_skidn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywyfl"]
+size = Vector2(39, 36.5)
 
 [node name="Arena" type="Node2D"]
 
@@ -25,3 +31,17 @@ texture = SubResource("CanvasTexture_i2kyv")
 position = Vector2(1106, 262)
 up_action_name = "second_player_move_up"
 down_action_name = "second_player_move_down"
+
+[node name="Ball" type="CharacterBody2D" parent="."]
+position = Vector2(541, 293)
+motion_mode = 1
+script = ExtResource("3_mgivc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+position = Vector2(18.75, 17.95)
+scale = Vector2(38.5, 36.1)
+texture = SubResource("CanvasTexture_skidn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+position = Vector2(18.5, 17.75)
+shape = SubResource("RectangleShape2D_ywyfl")
